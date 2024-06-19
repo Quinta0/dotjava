@@ -1,0 +1,176 @@
+{
+  "sections": [
+    {
+      "id": "basics",
+      "title": "Java Basics",
+      "description": "Explore the fundamental concepts of the Java programming language, including data types, variables, operators, control structures, and methods.",
+      "items": [
+        {
+          "title": "Data Types",
+          "description": "Different data types in Java such as int, double, boolean, and String, allow you to store various kinds of data.",
+          "code": "int x = 10;\ndouble y = 3.14;\nboolean isTrue = true;\nString name = \"John Doe\";",
+          "explanation": "This code snippet demonstrates the declaration and initialization of variables with different data types: an integer, a double, a boolean, and a string."
+        },
+        {
+          "title": "Variables",
+          "description": "Variables in Java store data values that can be used and manipulated throughout the program.",
+          "code": "int age = 25;\nString city = \"New York\";\ndouble salary = 50000.0;",
+          "explanation": "This code shows how to declare variables of various types and initialize them with values. Variables store data that can be used and manipulated throughout the program."
+        },
+        {
+          "title": "Operators",
+          "description": "Operators in Java are special symbols used to perform operations on variables and values.",
+          "code": "int a = 10;\nint b = 5;\nint sum = a + b;\nint diff = a - b;\nint product = a * b;\nint quotient = a / b;",
+          "explanation": "This example demonstrates the use of arithmetic operators in Java. It shows how to perform basic mathematical operations like addition, subtraction, multiplication, and division."
+        },
+        {
+          "title": "Control Structures",
+          "description": "Control structures like if-else, switch-case, and loops determine the flow of execution in a Java program.",
+          "code": "int num = 10;\nif (num > 0) {\n  System.out.println(\"Positive number\");\n} else {\n  System.out.println(\"Non-positive number\");\n}\n\nswitch (num) {\n  case 1:\n    System.out.println(\"One\");\n    break;\n  case 10:\n    System.out.println(\"Ten\");\n    break;\n  default:\n    System.out.println(\"Other number\");\n}\n\nfor (int i = 0; i < 5; i++) {\n  System.out.println(i);\n}",
+          "explanation": "This snippet demonstrates the use of control structures in Java. The if-else statement checks if a number is positive. The switch-case statement executes different code blocks based on the value of the number. The for loop iterates from 0 to 4 and prints each value."
+        },
+        {
+          "title": "Methods",
+          "description": "Methods in Java are blocks of code that perform a specific task and can be called upon when needed.",
+          "code": "public class Main {\n  public static void main(String[] args) {\n    greet(\"John\");\n  }\n\n  public static void greet(String name) {\n    System.out.println(\"Hello, \" + name);\n  }\n}",
+          "explanation": "This code defines a class with a main method that calls another method named greet. The greet method takes a string parameter and prints a greeting message. Methods help organize code into reusable blocks."
+        }
+      ]
+    },
+    {
+      "id": "oop",
+      "title": "Java Object-Oriented Programming",
+      "description": "Dive into the principles of object-oriented programming in Java, including classes, objects, inheritance, and encapsulation.",
+      "items": [
+        {
+          "title": "Classes and Objects",
+          "description": "Classes are blueprints for creating objects, which are instances of classes containing attributes and methods.",
+          "code": "class Person {\n  String name;\n  int age;\n\n  void introduce() {\n    System.out.println(\"Hello, my name is \" + name);\n  }\n}\n\nPerson p = new Person();\np.name = \"John\";\np.age = 30;\np.introduce();",
+          "explanation": "This example defines a class named Person with two fields (name and age) and a method (introduce). An object of the Person class is created, its fields are assigned values, and the introduce method is called to print a message."
+        },
+        {
+          "title": "Inheritance",
+          "description": "Inheritance allows one class to inherit fields and methods from another class, promoting code reuse and organization.",
+          "code": "class Employee extends Person {\n  double salary;\n\n  void displaySalary() {\n    System.out.println(\"Salary: \" + salary);\n  }\n}\n\nEmployee e = new Employee();\ne.name = \"John\";\ne.age = 35;\ne.salary = 50000.0;\ne.introduce();\ne.displaySalary();",
+          "explanation": "This code demonstrates inheritance, where the Employee class inherits from the Person class. The Employee class has an additional field (salary) and a method (displaySalary). An object of the Employee class is created and methods from both the Employee and Person classes are called."
+        },
+        {
+          "title": "Encapsulation",
+          "description": "Encapsulation restricts direct access to certain components of an object, promoting modularity and maintainability.",
+          "code": "class BankAccount {\n  private double balance;\n\n  public void deposit(double amount) {\n    balance += amount;\n  }\n\n  public void withdraw(double amount) {\n    if (balance >= amount) {\n      balance -= amount;\n    } else {\n      System.out.println(\"Insufficient funds.\");\n    }\n  }\n\n  public double getBalance() {\n    return balance;\n  }\n}\n\nBankAccount account = new BankAccount();\naccount.deposit(1000.0);\naccount.withdraw(500.0);\nSystem.out.println(\"Balance: \" + account.getBalance());",
+          "explanation": "This example illustrates encapsulation, where the BankAccount class's balance field is private and can only be accessed through public methods (deposit, withdraw, getBalance). This ensures that the balance cannot be directly modified from outside the class."
+        },
+        {
+          "title": "Polymorphism",
+          "description": "Polymorphism allows objects of different classes to be treated as objects of a common super class, enhancing flexibility and integration.",
+          "code": "class Animal {\n  void sound() {\n    System.out.println(\"Animal makes a sound\");\n  }\n}\n\nclass Dog extends Animal {\n  void sound() {\n    System.out.println(\"Dog barks\");\n  }\n}\n\nclass Cat extends Animal {\n  void sound() {\n    System.out.println(\"Cat meows\");\n  }\n}\n\nAnimal a1 = new Dog();\nAnimal a2 = new Cat();\na1.sound(); // Dog barks\na2.sound(); // Cat meows",
+          "explanation": "This code demonstrates polymorphism, where a single interface (Animal) can be used for different types (Dog and Cat). The sound method is overridden in Dog and Cat classes, and when called, the appropriate method for the actual object type is executed."
+        },
+        {
+          "title": "Interfaces",
+          "description": "Interfaces in Java are abstract types that allow classes to implement multiple inheritance-like structures.",
+          "code": "interface Animal {\n  void makeSound();\n}\n\nclass Dog implements Animal {\n  public void makeSound() {\n    System.out.println(\"Bark\");\n  }\n}\n\nclass Cat implements Animal {\n  public void makeSound() {\n    System.out.println(\"Meow\");\n  }\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    Animal dog = new Dog();\n    Animal cat = new Cat();\n    dog.makeSound(); // Bark\n    cat.makeSound(); // Meow\n  }\n}",
+          "explanation": "This example demonstrates how to define an interface and implement it in multiple classes. The Animal interface has a single method, makeSound, which is implemented differently in Dog and Cat classes."
+        },
+        {
+          "title": "Abstract Classes and Methods",
+          "description": "Abstract classes and methods define a template for other classes to extend and provide concrete implementations.",
+          "code": "abstract class Animal {\n  abstract void makeSound();\n\n  public void sleep() {\n    System.out.println(\"Sleeping...\");\n  }\n}\n\nclass Dog extends Animal {\n  public void makeSound() {\n    System.out.println(\"Bark\");\n  }\n}\n\nclass Cat extends Animal {\n  public void makeSound() {\n    System.out.println(\"Meow\");\n  }\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    Animal dog = new Dog();\n    Animal cat = new Cat();\n    dog.makeSound(); // Bark\n    cat.makeSound(); // Meow\n    dog.sleep();     // Sleeping...\n    cat.sleep();     // Sleeping...\n  }\n}",
+          "explanation": "This example demonstrates how to use abstract classes and methods. The Animal class is abstract and includes an abstract method makeSound that must be implemented by any subclass. It also includes a regular method sleep that can be used by all subclasses."
+        },
+        {
+          "title": "Constructors",
+          "description": "Constructors in Java initialize new objects and set initial values for fields.",
+          "code": "class Person {\n  String name;\n  int age;\n\n  // Default constructor\n  public Person() {\n    this.name = \"Unknown\";\n    this.age = 0;\n  }\n\n  // Parameterized constructor\n  public Person(String name, int age) {\n    this.name = name;\n    this.age = age;\n  }\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    Person p1 = new Person(); // Calls default constructor\n    Person p2 = new Person(\"Alice\", 30); // Calls parameterized constructor\n    System.out.println(p1.name + \" is \" + p1.age + \" years old.\");\n    System.out.println(p2.name + \" is \" + p2.age + \" years old.\");\n  }\n}",
+          "explanation": "This code demonstrates how to define default and parameterized constructors in a class. The default constructor initializes fields to default values, while the parameterized constructor sets them based on provided arguments."
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "title": "Java Standard Library",
+      "description": "Explore the most commonly used Java standard library classes and their usage, including collections, I/O, and more.",
+      "items": [
+        {
+          "title": "Collections",
+          "description": "Collections in Java provide a framework for storing and manipulating groups of objects.",
+          "code": "List<String> names = new ArrayList<>();\nnames.add(\"John\");\nnames.add(\"Jane\");\nnames.add(\"Bob\");\n\nSet<Integer> numbers = new HashSet<>();\nnumbers.add(1);\nnumbers.add(2);\nnumbers.add(3);\n\nMap<String, Integer> ages = new HashMap<>();\nages.put(\"John\", 30);\nages.put(\"Jane\", 25);\nages.put(\"Bob\", 35);",
+          "explanation": "This example demonstrates the usage of Java collections. An ArrayList is used to store a list of names, a HashSet is used to store unique numbers, and a HashMap is used to store key-value pairs of names and ages."
+        },
+        {
+          "title": "I/O",
+          "description": "Java's I/O (Input/Output) classes are used to read data from and write data to files and other input and output sources.",
+          "code": "try {\n  FileWriter writer = new FileWriter(\"output.txt\");\n  writer.write(\"Hello, World!\");\n  writer.close();\n} catch (IOException e) {\n  System.out.println(\"An error occurred.\");\n  e.printStackTrace();\n}\n\ntry {\n  FileReader reader = new FileReader(\"input.txt\");\n  // Read operations\n} catch (FileNotFoundException e) {\n  System.out.println(\"An error occurred.\");\n  e.printStackTrace();\n}",
+          "explanation": "This code snippet shows basic file I/O operations in Java. A FileWriter is used to write text to a file, and a FileReader (commented) is used to read text from a file. Exception handling ensures that any I/O errors are caught and handled appropriately."
+        },
+        {
+          "title": "Networking",
+          "description": "Java's networking classes allow you to communicate with other computers over a network using sockets and other protocols.",
+          "code": "try {\n  Socket socket = new Socket(\"example.com\", 80);\n  PrintWriter out = new PrintWriter(socket.getOutputStream(), true);\n  BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));\n  out.println(\"GET / HTTP/1.1\\nHost: example.com\\n\\n\");\n  String response = in.readLine();\n  while (response != null) {\n    System.out.println(response);\n    response = in.readLine();\n  }\n  socket.close();\n} catch (IOException e) {\n  System.out.println(\"An error occurred.\");\n  e.printStackTrace();\n}",
+          "explanation": "This example demonstrates basic networking in Java. A socket connection is established to a web server, an HTTP GET request is sent, and the server's response is read and printed line by line. Proper exception handling ensures that any networking errors are caught and handled."
+        },
+        {
+          "title": "Concurrency",
+          "description": "Java's concurrency utilities enable parallel execution of code using threads and synchronization.",
+          "code": "class MyThread extends Thread {\n  public void run() {\n    System.out.println(\"Thread running\");\n  }\n}\n\nMyThread t1 = new MyThread();\nMyThread t2 = new MyThread();\nt1.start();\nt2.start();",
+          "explanation": "This code demonstrates concurrency in Java using threads. A custom thread class is created by extending the Thread class and overriding the run method. Two threads are instantiated and started, running concurrently and printing a message."
+        },
+        {
+          "title": "Date and Time",
+          "description": "Java's date and time API provides classes for managing dates, times, and durations.",
+          "code": "import java.time.LocalDate;\nimport java.time.LocalTime;\nimport java.time.LocalDateTime;\n\nLocalDate date = LocalDate.now();\nLocalTime time = LocalTime.now();\nLocalDateTime dateTime = LocalDateTime.now();\n\nSystem.out.println(\"Date: \" + date);\nSystem.out.println(\"Time: \" + time);\nSystem.out.println(\"DateTime: \" + dateTime);",
+          "explanation": "This example shows how to work with date and time using the java.time package. It retrieves and prints the current date, time, and date-time using LocalDate, LocalTime, and LocalDateTime classes, respectively."
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced Java",
+      "description": "Explore advanced topics in Java, including generics, lambda expressions, streams, and more.",
+      "items": [
+        {
+          "title": "Generics",
+          "description": "Generics enable types (classes and methods) to operate on objects of various types while providing compile-time type safety.",
+          "code": "class Box<T> {\n  private T value;\n\n  public void setValue(T value) {\n    this.value = value;\n  }\n\n  public T getValue() {\n    return value;\n  }\n}\n\nBox<Integer> intBox = new Box<>();\nintBox.setValue(10);\nSystem.out.println(\"Integer Value: \" + intBox.getValue());\n\nBox<String> strBox = new Box<>();\nstrBox.setValue(\"Hello\");\nSystem.out.println(\"String Value: \" + strBox.getValue());",
+          "explanation": "This example demonstrates the use of generics in Java, which allow classes, interfaces, and methods to operate on types specified by the programmer. The Box class can store any type of value, and two instances of Box are created to store an Integer and a String."
+        },
+        {
+          "title": "Lambda Expressions",
+          "description": "Lambda expressions provide a clear and concise way to represent one method interface using an expression.",
+          "code": "List<String> names = Arrays.asList(\"John\", \"Jane\", \"Bob\");\n\nnames.forEach(name -> System.out.println(name));",
+          "explanation": "This code demonstrates the use of lambda expressions in Java. The forEach method of the List interface is used to iterate over the list of names and print each name. Lambda expressions provide a concise way to represent anonymous functions."
+        },
+        {
+          "title": "Streams",
+          "description": "Streams support functional-style operations on sequences of elements, such as map-reduce transformations.",
+          "code": "List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);\n\nint sum = numbers.stream()\n  .filter(n -> n % 2 == 0)\n  .mapToInt(Integer::intValue)\n  .sum();\n\nSystem.out.println(\"Sum of even numbers: \" + sum);",
+          "explanation": "This example demonstrates the use of streams in Java to process a list of integers. The stream pipeline filters even numbers, converts them to integers, and calculates their sum. Streams allow for functional-style operations on collections of objects."
+        },
+        {
+          "title": "Annotations",
+          "description": "Annotations provide metadata about the program, which can be used by the compiler or at runtime.",
+          "code": "@Override\npublic String toString() {\n  return \"Custom toString implementation\";\n}\n\n@SuppressWarnings(\"unchecked\")\npublic void myMethod() {\n  List rawList = new ArrayList();\n  rawList.add(\"Test\");\n}",
+          "explanation": "This code demonstrates the use of annotations in Java. The @Override annotation indicates that a method is overriding a superclass method. The @SuppressWarnings annotation is used to suppress compiler warnings, in this case, unchecked type operations."
+        },
+        {
+          "title": "Reflection",
+          "description": "Reflection allows inspection and manipulation of classes, methods, and fields at runtime.",
+          "code": "try {\n  Class<?> clazz = Class.forName(\"java.lang.String\");\n  Method method = clazz.getMethod(\"substring\", int.class, int.class);\n  String str = \"Hello, World!\";\n  String result = (String) method.invoke(str, 7, 12);\n  System.out.println(\"Result: \" + result);\n} catch (Exception e) {\n  e.printStackTrace();\n}",
+          "explanation": "This code demonstrates the use of reflection in Java to inspect and manipulate classes at runtime. The Class.forName method retrieves the String class, the getMethod method retrieves the substring method, and the method.invoke method calls substring on the given string."
+        },
+        {
+          "title": "Enums",
+          "description": "Enums are special Java types used to define collections of constants.",
+          "code": "enum Day {\n  SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    Day today = Day.MONDAY;\n    switch (today) {\n      case MONDAY:\n        System.out.println(\"Today is Monday\");\n        break;\n      case FRIDAY:\n        System.out.println(\"Today is Friday\");\n        break;\n      default:\n        System.out.println(\"Another day\");\n    }\n  }\n}",
+          "explanation": "This example shows how to define and use an enum. The Day enum represents the days of the week, and a switch statement is used to print a message based on the current day."
+        },
+        {
+          "title": "Records",
+          "description": "Records provide a compact syntax for declaring classes that are primarily used to store data.",
+          "code": "public record Person(String name, int age) {}\n\npublic class Main {\n  public static void main(String[] args) {\n    Person person = new Person(\"John\", 25);\n    System.out.println(person.name() + \" is \" + person.age() + \" years old.\");\n  }\n}",
+          "explanation": "This example shows how to define and use a record in Java. Records provide a compact syntax for declaring classes that are primarily used to store data and automatically generate common methods like constructors, equals, hashCode, and toString."
+        }
+      ]
+    }
+  ]
+}
