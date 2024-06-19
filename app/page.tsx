@@ -66,7 +66,7 @@ export default function Component() {
             {showButton && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-10 right-10 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary-dark transition"
+                    className="fixed bottom-10 right-10 bg-primary text-primary-foreground p-3 rounded-full shadow-md hover:bg-primary-dark transition"
                 >
                     ↑ Top
                 </button>
