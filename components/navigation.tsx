@@ -1,11 +1,13 @@
 import Link from "next/link";
 import JavaContent from "../app/java_tutorial.json";
 import {JSX, SVGProps} from "react";
+import {Button} from "@/components/ui/button";
+
 export default function Navigation() {
     return (
         <header className="bg-primary text-primary-foreground py-4 px-6 shadow">
             <div className="container mx-auto flex items-center justify-between">
-                <Link href="#" className="flex items-center gap-2 font-bold text-xl" prefetch={false}>
+                <Link href="/" className="flex items-center gap-2 font-bold text-xl" prefetch={false}>
                     <CodeIcon className="w-6 h-6"/>
                     Dot Java
                 </Link>
@@ -16,6 +18,9 @@ export default function Navigation() {
                         </Link>
                     ))}
                 </nav>
+                <Link href="/editor" className="hover:underline" prefetch={false}>
+                    <Button>Code Editor</Button>
+                </Link>
             </div>
         </header>
     )

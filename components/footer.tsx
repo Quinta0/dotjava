@@ -1,4 +1,13 @@
 import {JSX, SVGProps} from "react";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
 
 export default function Footer() {
     return (
@@ -6,8 +15,40 @@ export default function Footer() {
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
                 <p className="text-sm">&copy; 2024 Java Tutorials. All rights reserved.</p>
                 <nav className="flex items-center gap-4">
-                    <a href="#" className="hover:underline">License</a>
-                    <a href="https://github.com/Quinta0" target="_blank" rel="noopener noreferrer"
+                    <Dialog>
+                        <DialogTrigger>Licence</DialogTrigger>
+                        <DialogContent>
+                            <DialogHeader>
+                                <DialogTitle>MIT License</DialogTitle>
+                                <DialogDescription>
+                                    <p className="font-bold">Copyright (c) 2024 Quintavalle Pietro</p>
+                                    <p className="mt-2">
+                                    Permission is hereby granted, free of charge, to any person obtaining a copy
+                                    of this software and associated documentation files (the "Software"), to deal
+                                    in the Software without restriction, including without limitation the rights
+                                    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                                    copies of the Software, and to permit persons to whom the Software is
+                                    furnished to do so, subject to the following conditions:
+                                    </p>
+                                    <p>
+                                    The above copyright notice and this permission notice shall be included in all
+                                    copies or substantial portions of the Software.
+                                    </p>
+                                    <p className="mt-2">
+                                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                                    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                                    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                                    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                                    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                                    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                                    SOFTWARE.
+                                    </p>
+                                </DialogDescription>
+                            </DialogHeader>
+                        </DialogContent>
+                    </Dialog>
+
+                <a href="https://github.com/Quinta0" target="_blank" rel="noopener noreferrer"
                        className="hover:underline">
                         <GitHubIcon className="w-6 h-6"/>
                     </a>
