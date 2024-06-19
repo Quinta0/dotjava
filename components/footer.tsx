@@ -12,7 +12,7 @@ export default function Footer() {
     return (
         <footer className="bg-muted text-muted-foreground py-6">
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <p className="text-sm">&copy; 2024 Java Tutorials. All rights reserved.</p>
+                <p className="text-sm">&copy; 2024 Quintavalle Pietro. All rights reserved.</p>
                 <nav className="flex items-center gap-4">
                     <Dialog>
                         <DialogTrigger>Licence</DialogTrigger>
