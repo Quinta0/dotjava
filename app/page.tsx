@@ -50,7 +50,7 @@ export default function Component() {
                                     <div key={itemIndex}>
                                         <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
                                         <p className="text-muted-foreground mb-6">{item.description}</p>
-                                        <div className="bg-background rounded-lg p-6 shadow my-4">
+                                        <div className="bg-background rounded-lg p-6 shadow-2xl my-4">
                                             <pre className="text-sm font-mono">
                                                 <code className="text-pretty">{item.code}</code>
                                             </pre>
