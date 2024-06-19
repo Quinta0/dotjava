@@ -19,7 +19,7 @@ export default function Navigation() {
                     ))}
                 </nav>
                 <Link href="/editor" className="hover:underline" prefetch={false}>
-                    <Button>Code Editor</Button>
+                    <Button className="border-2">Code Editor</Button>
                 </Link>
             </div>
         </header>
