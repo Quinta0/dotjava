@@ -5,7 +5,7 @@ export default function MainPage() {
     return (
         <>
             {JavaContent.sections.map((section, index) => (
-                <section key={index} id={section.id} className={`py-12 md:py-24 ${index % 2 === 0 ? 'bg-muted' : ''}`}>
+                <section key={index} id={section.id} className={`py-12 md:py-24 w-full ${index % 2 === 0 ? 'bg-muted' : ''}`}>
                     <div className="container mx-auto px-4 md:px-6">
                         <h2 className="text-3xl font-bold mb-8">{section.title}</h2>
                         <p className="text-lg mb-8">{section.description}</p>

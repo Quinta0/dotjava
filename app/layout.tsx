@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     }
 
     return (
-        <html lang="en">
+        <html lang="en" className=" min-w-min">
         <head>
             <style jsx global>{`
                     html {
