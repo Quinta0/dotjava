@@ -195,6 +195,41 @@
             "result": "Output:\nJohn is 25 years old."
         }
       ]
+    },
+    {
+      "id": "exceptions",
+      "title": "Exception Handling",
+      "description": "Learn how Java handles runtime errors using try-catch blocks, the finally clause, custom exceptions, and try-with-resources.",
+      "items": [
+        {
+          "title": "Try-Catch",
+          "description": "The try-catch block lets you handle exceptions that occur during the execution of a block of code.",
+          "code": "try {\n  int result = 10 / 0;\n} catch (ArithmeticException e) {\n  System.out.println(\"Cannot divide by zero: \" + e.getMessage());\n}",
+          "explanation": "This example wraps risky code in a try block. When the division by zero throws an ArithmeticException, control jumps to the matching catch block instead of crashing the program.",
+          "result": "Output:\nCannot divide by zero: / by zero"
+        },
+        {
+          "title": "Finally",
+          "description": "The finally block always runs after try/catch, whether or not an exception was thrown, making it ideal for cleanup.",
+          "code": "FileWriter writer = null;\ntry {\n  writer = new FileWriter(\"log.txt\");\n  writer.write(\"entry\");\n} catch (IOException e) {\n  System.out.println(\"Write failed.\");\n} finally {\n  if (writer != null) {\n    try { writer.close(); } catch (IOException ignored) {}\n  }\n}",
+          "explanation": "The finally block closes the file resource regardless of whether the write succeeded, preventing resource leaks even when an exception occurs.",
+          "result": "Output:\n(file is always closed, even on failure)"
+        },
+        {
+          "title": "Custom Exceptions",
+          "description": "You can define your own exception types by extending Exception or RuntimeException to represent domain-specific errors.",
+          "code": "class InsufficientFundsException extends Exception {\n  public InsufficientFundsException(String message) {\n    super(message);\n  }\n}\n\nvoid withdraw(double balance, double amount) throws InsufficientFundsException {\n  if (amount > balance) {\n    throw new InsufficientFundsException(\"Not enough funds.\");\n  }\n}",
+          "explanation": "InsufficientFundsException extends Exception and carries a custom message. Callers must handle or declare it, making the failure mode explicit in the method signature.",
+          "result": "Output:\nInsufficientFundsException: Not enough funds."
+        },
+        {
+          "title": "Try-With-Resources",
+          "description": "Try-with-resources automatically closes any resource that implements AutoCloseable when the block finishes.",
+          "code": "try (BufferedReader reader = new BufferedReader(new FileReader(\"input.txt\"))) {\n  String line = reader.readLine();\n  System.out.println(line);\n} catch (IOException e) {\n  System.out.println(\"Could not read file.\");\n}",
+          "explanation": "The reader is declared inside the parentheses of the try statement, so Java closes it automatically when the block exits, even if an exception is thrown, without a manual finally block.",
+          "result": "Output:\n(first line of input.txt, resource closed automatically)"
+        }
+      ]
     }
   ]
 }

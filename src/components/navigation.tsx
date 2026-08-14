@@ -1,19 +1,19 @@
-import Link from "next/link";
-import JavaContent from "../app/java_tutorial.json";
+import { Link } from "react-router-dom";
+import { topics } from "@/data/topics";
 import { JSX, SVGProps } from "react";
 
 export default function Navigation() {
     return (
         <header className="bg-primary text-primary-foreground py-4 px-6 shadow">
             <div className="container mx-auto flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 font-bold text-xl" prefetch={false}>
+                <Link to="/" className="flex items-center gap-2 font-bold text-xl">
                     <CodeIcon className="w-6 h-6"/>
                     Dot Java
                 </Link>
                 <nav className="hidden md:flex items-center gap-6">
-                    {JavaContent.sections.map((section, index) => (
-                        <Link key={index} href={`#${section.id}`} className="hover:underline" prefetch={false}>
-                            {section.title}
+                    {topics.map((topic) => (
+                        <Link key={topic.id} to={`/topic/${topic.id}`} className="hover:underline">
+                            {topic.title}
                         </Link>
                     ))}
                 </nav>
