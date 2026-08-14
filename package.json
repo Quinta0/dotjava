@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.0.20",
-    "@monaco-editor/react": "^4.6.0",
     "@radix-ui/react-dialog": "^1.1.0",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
